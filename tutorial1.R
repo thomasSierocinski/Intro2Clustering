@@ -1,23 +1,24 @@
-# datasets
-# introduce microarrays
-# what they measure, how they work
-
-# Getting help
+# TUTORIAL 1
 
 
+########################################
+# section 1: packages installation, getting started
+#########################################
 
-# install all required packages
+
+# 1.1 install all required packages
 # from CRAN repos
 install.packages(c("parallel", "matrixcalc", "Hmisc", "corrplot", "tidyr", "ggplot2", "RColorBrewer", "readxls"))
 
 
-# from Bioconductor repo
+# 1.2 from Bioconductor repo
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
 BiocManager::install("GEOquery")
 
 
+# 1.3 getting started
 # clean environment
 rm(list=ls())
 
@@ -440,10 +441,10 @@ cat("Cleaned Data:\n")
 print(cleaned_data)
 
 ###################################################
-# Section 10: Functions and Functional Programming
+# Section 8: Functions and Functional Programming
 ###################################################
 
-# 10.1 Writing custom functions
+# 8.1 Writing custom functions
 # You can create your own functions in R.
 
 # Example: Define a function to calculate the square of a number
@@ -464,7 +465,7 @@ add <- function(a, b) {
 sum_result <- add(3, 7)
 cat("Sum of 3 and 7:", sum_result, "\n\n")
 
-# 10.2 Function arguments and return values
+# 8.2 Function arguments and return values
 # Functions can have arguments and return values.
 
 # Example: Function with default argument
@@ -477,7 +478,7 @@ greeting2 <- greet("Alice")
 cat(greeting1, "\n")
 cat(greeting2, "\n\n")
 
-# 10.3 Functional programming (apply, lapply, sapply)
+# 8.3 Functional programming (apply, lapply, sapply)
 # R provides functions for functional programming.
 
 # Example: Using lapply to apply a function to a list
@@ -502,11 +503,11 @@ cat("Column Sums:")
 print(column_sums)
 
 #################################################
-# Section 12: Basic Statistics and Data Analysis
+# Section 9: Basic Statistics and Data Analysis
 #################################################
 
 
-# 12.1 Descriptive statistics
+# 9.1 Descriptive statistics
 # You can calculate common descriptive statistics in R.
 
 # Example: Calculate mean, median, and standard deviation of a numeric vector
@@ -520,7 +521,7 @@ cat("Mean Grade:", mean_grade, "\n")
 cat("Median Grade:", median_grade, "\n")
 cat("Standard Deviation of Grades:", sd_grade, "\n\n")
 
-# 12.2 Hypothesis testing
+# 9.2 Hypothesis testing
 # R provides functions for hypothesis testing.
 
 # Example: Perform a t-test to compare two sets of data
@@ -532,7 +533,7 @@ cat("T-test Result:\n")
 print(t_test_result)
 cat("\n")
 
-# 12.3 Linear regression
+# 9.3 Linear regression
 # You can perform linear regression to model relationships between variables.
 
 # Example: Linear regression model
@@ -547,7 +548,7 @@ cat("Linear Regression Model Summary:\n")
 print(summary(linear_model))
 cat("\n")
 
-# 12.4 Exploratory data analysis (EDA)
+# 9.4 Exploratory data analysis (EDA)
 # EDA involves visualizing and understanding the data.
 
 # Example: Box plot for visualizing data distribution
@@ -572,6 +573,8 @@ hist(grades, main = "Histogram of Grades", xlab = "Grades", ylab = "Frequency")
 ####################################
 # Microarrays
 ####################################
+
+# explain microarrays principles
 
 ###############################
 # GEO datasets
