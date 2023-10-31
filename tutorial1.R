@@ -568,6 +568,36 @@ grades <- c(78, 84, 92, 88, 76, 85, 91, 89, 83, 80)
 hist(grades, main = "Histogram of Grades", xlab = "Grades", ylab = "Frequency")
 
 
+############################
+# 10Data Generation
+############################
+
+# 10.1 Generating Random Data
+
+# 101 Generating random normal (Gaussian) data
+set.seed(123)  # Setting a seed for reproducibility
+normal_data <- rnorm(100, mean = 0, sd = 1)  # Generate 100 random values from a standard normal distribution
+
+# 10.2 Generating random uniform data
+uniform_data <- runif(100, min = 0, max = 1)  # Generate 100 random values from a uniform distribution [0, 1]
+
+# 10.3 Generating random integers
+integer_data <- sample(1:10, 100, replace = TRUE)  # Generate 100 random integers between 1 and 10
+
+# 10.4 Histogram for random normal data
+hist(normal_data, main = "Random Normal Data", xlab = "Value", ylab = "Frequency")
+
+# 10.5 Density plot for random uniform data
+plot(density(uniform_data), main = "Density Plot for Random Uniform Data", xlab = "Value", ylab = "Density")
+
+# 10.6 Bar plot for random integer data
+barplot(table(integer_data), main = "Bar Plot for Random Integers", xlab = "Value", ylab = "Frequency")
+
+# 3.1 Summary statistics
+summary(normal_data)
+summary(uniform_data)
+summary(integer_data)
+
 
 
 ####################################
