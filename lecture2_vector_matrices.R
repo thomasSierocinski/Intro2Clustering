@@ -122,6 +122,46 @@ dev.off()
 
 
 
+
+
+### MATRICES
+
+
+rm(list=ls())
+# matrices
+# matrix creation
+munif <- function(x, y){
+  print(x)
+  print(y)
+  mres <- matrix(nrow=x, ncol=y)
+  for(i in 1:x){
+    mres[i,] <- runif(y)
+  }
+  return(mres)
+}
+
+mdat <- munif(10, 5)
+#Row vector
+mdat[1,]
+#Column vectors
+mdat[,1]
+#Submatrix
+mdat[1:9, 1:4]
+#Addition
+mdat[1:2,]
+mdat[1:2,]+mdat[1,]
+mdat[1:2,]+mdat[1:2,]
+#Scalar multiplication
+10*mdat[1:2,]
+#Transposition
+t(mdat[1:2,])
+#Matrix multiplication
+mdat %*% mdat[2,] 
+
+
+
+
+
 ### LINEAR EQUATION
 
 rm(list=ls())
