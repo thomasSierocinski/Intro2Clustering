@@ -38,7 +38,7 @@
 # remove all rows with more than half of its values missing. store the resulting matrix in another variable
 
 # if your data does not carry missing values
-#FIXME
+# skip this step or replace randomly some data by NAs
 
 # 1.2 install the CRAN package called multiUS
 # using the KNNimp function
@@ -84,7 +84,7 @@
 # denoising data using SVD
 
 
-# 4.1 Starting from the raw data
+# 4.1 Starting from the raw imputed data
 # Center the data
 
 
@@ -109,7 +109,7 @@
 # EXERCISE 5 
 # MultiDimensional Scaling
 
-# 5.1 USing the raw data matrix
+# 5.1 USing the raw imputed data matrix
 # using dist() and cmdscale()
 # perform the Classical MDS
 
