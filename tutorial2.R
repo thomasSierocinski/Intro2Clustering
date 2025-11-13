@@ -24,8 +24,7 @@ arrayDesign <- fData(mygse[[1]])
 
 # Exercise 1: Vectors and Matrices
 # Extract the expression values for a specific gene and sample
-# inspect expression levels for a given probe and sample
-# Extract the vector for the chosen one
+# inspect expression levels for a given probe/gene and sample
 # hint: exp_value <- expressionLevels[probe_name,sample_name]
 
 # inspect data 
