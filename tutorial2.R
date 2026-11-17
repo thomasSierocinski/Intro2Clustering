@@ -39,29 +39,29 @@ summary(annotation)
 # exercise 2: apply
 # compute the mean expression for every probe/gene
 # compute the standard deviation for every probe/gene
-# compute coefficient of variation for every probe/gene
-# plot a histogram of the cv
-# remove all probes having a cv < 0.5
+# compute fold change for every probe/gene
+# plot a histogram of the fold change
+# remove all probes having a fold change < 2
 
 
 # Exercise 3: Distances
-# using the selected expression data (cv < 0.5)
+# using the selected expression data (fc >= 2)
 # Calculate cosine distance between two samples
 # Calculate Euclidean distance between two samples
 # Calculate Spearman correlation between two samples
 
 
-# Exercise 3: Ranking by Similarity
+# Exercise 4: Ranking by Similarity
 # Rank samples based on cosine similarity to a reference sample
 # compute cosine similarity distance matrix between samples
 # compute the disimilarity distance matrix between samples
 
 
-# Exercise 4: correlation matrix plotting
+# Exercise 5: correlation matrix plotting
 # plot the whole set of correlation using corrplot
 
 
-# Exercise 5: Eigen Decomposition
+# Exercise 6: Eigen Decomposition
 # Perform eigen decomposition on the similatity matrix
 # Perform eigen decomposition
 
@@ -76,7 +76,7 @@ summary(annotation)
 
 
 
-# Exercise 6: scatterplot
+# Exercise 7: scatterplot
 # make a scatterplot of projected data on eigenvector 1 and 2
 # color the dots according to a factor of interest in metadata
 

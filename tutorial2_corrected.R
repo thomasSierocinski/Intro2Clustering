@@ -58,17 +58,17 @@ mean_expression <- apply(expressionLevels, 1, mean)
 mean_expression <- apply(expressionLevels, 1, function(x){mean(x)})
 # compute the standard deviation for every probe/gene
 sd_expression <- apply(expressionLevels, 1, sd)
-# compute coefficient of variation for every probe/gene
-cv_expression <- sd_expression / mean_expression
-# plot a histogram of the cv
-hist(cv_expression, main="Histogram of Coefficient of Variation")
-# remove all probes having a cv < 0.3
-selected_probes <- names(cv_expression[cv_expression >= 0.3])
+# compute the fold change between conditions for every probe/gene
+fold_change <- apply(expressionLevels, 1, function(x){mean(x[which(annotation$`tumor stage:ch1`=="t1")]) / mean(x[which(annotation$`tumor stage:ch1`=="t2")])})
+# plot a histogram of the fold change
+hist(fold_change, main="Histogram of Fold Change")
+# remove all probes having a fold change < 2
+selected_probes <- names(fold_change[fold_change >= 2])
 expressionLevelsLite <- expressionLevels[selected_probes, ]
 
 
 # Exercise 3: Distances
-# using the selected expression data (cv < 0.3)
+# using the selected expression data (fc >= 2)
 # Calculate cosine distance between two samples
 cosine <- cor(expressionLevelsLite[,1], expressionLevelsLite[,2], method="pearson")
 # Calculate Euclidean distance between two samples
@@ -104,9 +104,7 @@ eigenvalues <- eigen_result$values
 eigenvectors <- eigen_result$vectors
 
 
-# histogram of eigenvalues
-hist(eigenvalues, main="Histogram of Eigenvalues")
-#ERRATUM: barplot actually preffered
+# barplot of eigenvalues
 barplot(eigenvalues, main="eigenvalues")
 
 # project samples on eigenvectors
@@ -126,11 +124,6 @@ ggplot(toPlot, aes(x=projX, y=projY, color=characteristics_ch1.3))+geom_point(si
 ggplot(toPlot, aes(x=projX, y=projY, color=characteristics_ch1.2))+geom_point(size=6)
 # visualizing "by gender"
 ggplot(toPlot, aes(x=projX, y=projY, color=characteristics_ch1.1))+geom_point(size=6)
-
-
-
-
-
 
 
 # 
